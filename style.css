@@ -17,6 +17,16 @@ body{
     background-color: var(--light-color);
 }
 
+.english{
+    display: flex;
+    flex-direction: column;
+}
+
+.polish{
+    display: none;
+    flex-direction: column;
+}
+
 .header{
     display: flex;
     justify-content: center;
@@ -39,6 +49,22 @@ body{
 
 .main-description{
     font-size: 24px;
+}
+
+.languages{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.language-btn{
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .main-app{
@@ -273,4 +299,13 @@ option{
 
 .panel-btn:hover{
     background-color: rgba(19, 26, 85, 0.2)
+}
+
+.add-transaction-pl,
+.remove-transaction-pl{
+    padding: 7px 14px;
+}
+
+.add-transaction-pl{
+    margin-right: 15px;
 }
