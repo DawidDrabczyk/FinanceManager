@@ -16,8 +16,9 @@ const removeAllTransaction = document.querySelector(".remove-all-transaction");
 const saveTransaction = document.querySelector(".save");
 const cancelTransaction = document.querySelector(".cancel");
 
-const english = document.querySelector('#english')
-const polish = document.querySelector('#polish')
+const languages = document.querySelectorAll('.languages')
+const english = document.querySelector('.language-btn-eng')
+const polish = document.querySelector('.language-btn-pl')
 const englishVersion = document.querySelector('.english')
 const polishVersion = document.querySelector('.polish')
 
@@ -323,12 +324,20 @@ const chooseDarkStylePl = () => {
     root.style.setProperty('--border-color', 'rgba(255, 255, 255, 0.4)')
 }
 
+const chooseLanguagePopup = () => {
+    languages.forEach(el => {
+        el.style.display = "none"
+    })
+}
+
 const choosePolishVersion= () => {
+    chooseLanguagePopup()
     englishVersion.style.display = "None"
     polishVersion.style.display = "Flex"
 }
 
 const chooseEnglishVersion= () => {
+    chooseLanguagePopup()
     englishVersion.style.display = "Flex"
     polishVersion.style.display = "None"
 }
@@ -339,5 +348,5 @@ saveTransactionPl.addEventListener("click", checkFormPanelPl);
 removeAllTransactionPl.addEventListener('click', deleteAllTransactionPl)
 lightStylePl.addEventListener('click', chooseLightStylePl)
 darkStylePl.addEventListener('click', chooseDarkStylePl)
-english.addEventListener('click', chooseEnglishVersion)
 polish.addEventListener('click', choosePolishVersion)
+english.addEventListener('click', chooseEnglishVersion)
